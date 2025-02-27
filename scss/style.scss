@@ -43,6 +43,7 @@ body {
 
 .button {
 	padding: 0 1rem;
+	min-height: 5rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -79,13 +80,13 @@ body {
 		// .weather__city
 
 		&__city {
-			flex: 0 1 50%;
+			
 		}
 
 		// .weather__geolocation
 
 		&__geolocation {
-			flex: 0 1 50%;
+			
 		}
 }
 
@@ -107,8 +108,16 @@ body {
 			font-size: 2.2rem;
 		}
 
+		&__buttons {
+			display: flex;
+		}
+
 		&__result {
 			display: none;
+		}
+
+		&__button {
+			margin-right: 1rem;
 		}
 }
 
@@ -152,12 +161,58 @@ body {
 		}
 }
 .geolocation {
+	padding-top: 2rem;
 
+	&__buttons {
+		display: flex;
+		margin-bottom: 2rem;
+	}
 		// .geolocation__button
 
 		&__button {
 			max-width: fit-content;
-			height: 5rem;
+			margin-right: 1rem;
+		}
+
+		&__result {
+			display: none;
+		}
+}
+
+@media (max-width: 768px) {
+	.city {
+		&__search {
+			flex-direction: column;
+		}
+
+		&__name {
 			margin-bottom: 2rem;
 		}
+	}
+}
+
+@media (max-width: 480px) {
+	body {
+		font-size: 1.8rem;
+	}
+
+	.subtitle {
+		font-size: 2.4rem;
+	}
+
+	.city {
+		&__name {
+			width: 26rem;
+			font-size: 1.8rem;
+		}
+	}
+
+	.button {
+		font-size: 1.6rem;
+	}
+
+	.result {
+		padding: 1rem;
+		max-width: 26rem;
+	}
 }

@@ -44,6 +44,7 @@ body {
 
 .button {
   padding: 0 1rem;
+  min-height: 5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -72,13 +73,6 @@ body {
   flex-direction: column;
   height: 100%;
 }
-.weather__city {
-  flex: 0 1 50%;
-}
-.weather__geolocation {
-  flex: 0 1 50%;
-}
-
 .city__search {
   margin-bottom: 3rem;
   display: flex;
@@ -89,8 +83,14 @@ body {
   padding: 1rem;
   font-size: 2.2rem;
 }
+.city__buttons {
+  display: flex;
+}
 .city__result {
   display: none;
+}
+.city__button {
+  margin-right: 1rem;
 }
 
 .result {
@@ -118,9 +118,46 @@ body {
   margin-bottom: 1rem;
 }
 
+.geolocation {
+  padding-top: 2rem;
+}
+.geolocation__buttons {
+  display: flex;
+  margin-bottom: 2rem;
+}
 .geolocation__button {
   max-width: -moz-fit-content;
   max-width: fit-content;
-  height: 5rem;
-  margin-bottom: 2rem;
+  margin-right: 1rem;
+}
+.geolocation__result {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .city__search {
+    flex-direction: column;
+  }
+  .city__name {
+    margin-bottom: 2rem;
+  }
+}
+@media (max-width: 480px) {
+  body {
+    font-size: 1.8rem;
+  }
+  .subtitle {
+    font-size: 2.4rem;
+  }
+  .city__name {
+    width: 26rem;
+    font-size: 1.8rem;
+  }
+  .button {
+    font-size: 1.6rem;
+  }
+  .result {
+    padding: 1rem;
+    max-width: 26rem;
+  }
 }

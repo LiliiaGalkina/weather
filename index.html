@@ -20,28 +20,20 @@
 					<h2 class="city__title title subtitle">Погода в городе</h2>
 					<div class="city__search">
 						<input type="text" class="city__name">
-						<button class="city__button button">Показать погоду</button>
+						<div class="city__buttons">
+							<button class="city__button button">Показать погоду</button>
+							<button class="city__button-clear button">Очистить</button>
+						</div>
 					</div>
-					<div class="city__result result">
-						<!--<h3 class="result__city title"></h3>
-						<div class="result__date"></div>
-						<div class="result__temperature"></div>
-						<div class="result__cloudy"></div>
-						<div class="result__rain"></div>
-						<div class="result__wind"></div>-->
-					</div>
+					<div class="city__result result"></div>
 				</section>
 				<section class="weather__geolocation geolocation">
 					<h2 class="geolocation__title title subtitle">Погода по геолокации</h2>
-					<div class="geolocation__button button">Показать погоду</div>
-					<div class="geolocation__result result">
-						<h3 class="result__city title"></h3>
-						<div class="result__date"></div>
-						<div class="result__temperature"></div>
-						<div class="result__cloudy"></div>
-						<div class="result__rain"></div>
-						<div class="result__wind"></div>
+					<div class="geolocation__buttons">
+						<div class="geolocation__button button">Показать погоду</div>
+						<button class="city__button-clear-geo button">Очистить</button>
 					</div>
+					<div class="geolocation__result result"></div>
 				</section>
 			</div>
 		</div>
