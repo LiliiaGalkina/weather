@@ -20,7 +20,7 @@ body {
 	width: 100%;
 	height: 100%;
 	z-index: -1;
-	opacity: 0.2;
+	opacity: 0.3;
 	img {
 		width: 100%;
 		height: 100%;
@@ -146,6 +146,12 @@ body {
 
 		&__cloudy {
 			margin-bottom: 1rem;
+			display: flex;
+			align-items: center;
+			
+			img {
+				margin-right: 1rem;
+			}
 		}
 
 		// .result__rain
