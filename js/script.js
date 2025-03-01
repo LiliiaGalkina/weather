@@ -37,20 +37,24 @@ const makeBlockWeather = (obj, block) => {
 		cityName.classList.add("title");
 		let cityDate = document.createElement("div");
 		cityDate.innerHTML = getDate();
-		cityDate.classList.add("result__date");
+	cityDate.classList.add("result__date");
+	let cityCloudy = document.createElement("div");
+	cityCloudy.innerHTML = ` <img src="http://openweathermap.org/img/wn/${
+		obj.weather[0].icon
+	}.png" alt="${obj.weather[0].description}" />${
+		obj.weather[0].description[0].toUpperCase() +
+		obj.weather[0].description.slice(1)	}`;
+  cityCloudy.classList.add("result__cloudy");
 		let cityTemp = document.createElement("div");
 		cityTemp.innerHTML = `Температура воздуха ${(obj.main.temp).toFixed(0)} <sup>o</sup>C`;
 		cityTemp.classList.add("result__temperature");
-		let cityCloudy = document.createElement("div");
-		cityCloudy.innerHTML = `${obj.weather[0].description[0].toUpperCase() + obj.weather[0].description.slice(1)}`;
-		cityCloudy.classList.add("result__cloudy");
 		let cityRain = document.createElement("div");
 		cityRain.innerHTML = `Влажность воздуха  ${obj.main.humidity}%`;
 		cityRain.classList.add("result__rain");
 		let cityWind = document.createElement("div");
 		cityWind.innerHTML = `Скорость ветра  ${obj.wind.speed} м/с`;
 		cityCloudy.classList.add("result__wind");
-		 block.append(cityName, cityDate, cityTemp, cityCloudy, cityRain, cityWind);
+		 block.append(cityName, cityDate, cityCloudy, cityTemp, cityRain, cityWind);
 }
 
 const getWeatherCity = async () => {
@@ -99,6 +103,7 @@ const getGeoWeather = () => {
 		navigator.geolocation.getCurrentPosition(async (position) => {
 			latit = position.coords.latitude;
 			long = position.coords.longitude;
+			console.log(latit, long);
 			let urlGeo = `${apiUrlGeo}lat=${latit}&lon=${long}&appid=${apiKey}&units=metric&lang=ru`;
 			try {
 			const res = await fetch(urlGeo);
